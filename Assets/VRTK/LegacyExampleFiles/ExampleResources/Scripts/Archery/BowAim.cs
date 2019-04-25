@@ -11,6 +11,7 @@
         public float maxPullDistance = 1.1f;
         public float bowVibration = 0.062f;
         public float stringVibration = 0.087f;
+        public bool aimBow;
 
         private BowAnimation bowAnimation;
         private GameObject currentArrow;
@@ -165,6 +166,7 @@
 
         private void AimBow()
         {
+            if(aimBow)
             transform.rotation = Quaternion.LookRotation(holdControl.transform.position - stringControl.transform.position, holdControl.transform.TransformDirection(Vector3.forward));
         }
 
